@@ -1,8 +1,16 @@
 %h1 Sign Up
 
-= simple_form_for @user do |f|
-  = f.input :name
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.button :submit, "Sign Up"
+#sign-up-form
+  = simple_form_for @user do |f|
+    #input
+      = f.input :name
+      = f.input :email
+      = f.input :password
+      = f.input :password_confirmation
+      = f.input :company
+      = f.input :street1
+      = f.input :street2
+      = f.input :city
+      = f.input :state
+      = f.input :zip
+      = f.button :submit, "Sign Up"

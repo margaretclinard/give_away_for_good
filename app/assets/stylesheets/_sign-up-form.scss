@@ -1,0 +1,7 @@
+// #sign-up-form  {
+//   @include outer-container();
+// }
+
+#input {
+  @include span-columns(6 of 12);
+}

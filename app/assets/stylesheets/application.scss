@@ -2,3 +2,13 @@
 @import "base/grid-settings";
 @import "neat";
 @import "base/base";
+
+@import "sign-up-form";
+
+.navigation {
+  li {
+    display: inline-block;
+    float: right;
+    margin: 0 15px 0 0;
+  }
+}

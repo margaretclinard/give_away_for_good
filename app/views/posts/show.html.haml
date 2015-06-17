@@ -1,0 +1,6 @@
+%h1= @post.category
+By:
+.company= @post.user.company
+#{@post.description}
+
+= link_to "Return to #{@post.user.company}'s Needs", user_posts_path(@post.user)

@@ -1,0 +1,5 @@
+%ul
+  - @posts.each do |post|
+    = link_to post.category, user_post_path(post.user, post)
+
+= link_to "All Needs", root_path

@@ -12,6 +12,7 @@ feature "User Signs Up" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "password1"
     fill_in "Company", with: "Nashville Software School"
+    fill_in "Bio", with: Faker::Lorem.paragraph
     fill_in "Street1", with: "123 Plus Park Blvd"
     fill_in "Street2", with: "Suite 1"
     fill_in "City", with: "Nashville"
@@ -33,6 +34,7 @@ feature "User Signs Up" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "food"
     fill_in "Company", with: "Nashville Software School"
+    fill_in "Bio", with: Faker::Lorem.paragraph
     fill_in "Street1", with: "123 Plus Park Blvd"
     fill_in "Street2", with: "Suite 1"
     fill_in "City", with: "Nashville"

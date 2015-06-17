@@ -1,6 +1,7 @@
 %h1= @post.category
-By:
-.company= @post.user.company
-#{@post.description}
+%p Posted By: #{@post.user.company}
+%p Date posted: #{@post.date_posted}
+%p Deadline: #{@post.deadline}
+%p Description: #{@post.description}
 
 = link_to "Return to #{@post.user.company}'s Needs", user_posts_path(@post.user)

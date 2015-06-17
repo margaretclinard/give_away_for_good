@@ -1,0 +1,11 @@
+%h2 #{@user.company}'s Profile
+
+%p Company Bio: #{@user.bio}
+%p Address:
+%p #{@user.street1}
+%p #{@user.street2}
+%p #{@user.city}, #{@user.state} #{@user.zip}
+
+%p Contact: #{@user.name}
+%p Email: #{@user.email}
+=link_to "Edit"

@@ -4,6 +4,7 @@ Fabricator(:user) do
   password              "password1"
   password_confirmation "password1"
   company { Faker::Company.name}
+  bio    { Faker::Lorem.paragraph }
   street1 { Faker::Address.street_address }
   street2 { Faker::Address.secondary_address }
   city { Faker::Address.city }

@@ -1,0 +1,8 @@
+%h1 Give Away for Good
+%p Connecting Communities with Local Non-Profit Needs
+
+%h2 Non-Profits
+
+%ul
+  - @users.each do |user|
+    = link_to "#{user.company}'s Needs", user_posts_path(user)

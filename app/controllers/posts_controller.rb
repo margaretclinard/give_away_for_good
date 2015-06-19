@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :load_post
-  before_filter :load_user, except: [:new, :create]
+  before_filter :load_user, except: [:new, :create, :edit, :update, :destroy]
   before_action :require_login, except: [:index, :show]
 
   def index
@@ -15,6 +15,23 @@ class PostsController < ApplicationController
       flash.alert = "Your need could not be published. Please correct the errors below."
       render :new
     end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.assign_attributes(post_params)
+    if @post.save
+      redirect_to user_post_path(current_user, @post)
+      flash.notice = "#{@post.user.company}'s need has been updated."
+    else
+      flash.alert = "Please fix the errors below to continue."
+      render :edit
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to user_posts_path(current_user), notice: "#{@post.user.company}'s need has been deleted."
   end
 
   private

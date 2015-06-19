@@ -1,7 +1,14 @@
 %h1= @post.category
 %p Posted By: #{@post.user.company}
-%p Date posted: #{@post.date_posted}
+%p Date posted: #{@post.created_at.month}-#{@post.created_at.day}-#{@post.created_at.year}
 %p Deadline: #{@post.deadline}
 %p Description: #{@post.description}
 
-= link_to "Return to #{@post.user.company}'s Needs", user_posts_path(@post.user)
+- if logged_in? && current_user == @post.user
+  %p
+    = link_to "Edit Listing", edit_post_path(@post)
+  %p
+    = link_to "Delete Listing", post_path(@post), method: :delete
+
+%p
+  = link_to "Return to #{@post.user.company}'s Needs", user_posts_path(@post.user)

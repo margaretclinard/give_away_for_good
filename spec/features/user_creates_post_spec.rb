@@ -18,10 +18,9 @@ feature "user creates post" do
     me = Fabricate(:user, name: "Bob", company: "Nashville Software School")
     signin_as me
     click_on "Add Need"
-    fill_in "Category", with: "Canned Goods"
+    select("Canned Goods", :from => :category)
     fill_in "Description", with: "This is the description."
     # Need to work on dates within form
-    # fill_in "Date Posted", with: "June 16, 2015"
     # fill_in "Deadline", with: "September 30, 2015"
     click_on "Publish Need"
     page.should have_notice("Your need has been published.")

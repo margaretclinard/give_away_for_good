@@ -6,10 +6,13 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body
+  %body#container
     %header
       .navigation
         %nav
+          .title
+            %h1 Give Away for Good
+            %p Connecting Communities with Local Non-Profit Needs
           %ul
             - if !logged_in?
               - unless controller_name == "users" && action_name != "index"
@@ -25,3 +28,28 @@
     %p.notice= notice
     %p.alert= alert
     = yield
+
+    %footer.footer-2{:role => "contentinfo"}
+      %ul
+        %li
+          %a{:href => "javascript:void(0)"} About
+        %li
+          %a{:href => "javascript:void(0)"} Contact
+        %li
+          %a{:href => "javascript:void(0)"} Products
+      .footer-secondary-links
+        %ul
+          %li
+            %a{:href => "javascript:void(0)"} Terms and Conditions
+          %li
+            %a{:href => "javascript:void(0)"} Privacy Policy
+        %ul.footer-social
+          %li
+            %a{:href => "javascript:void(0)"}
+              %img{:alt => "Facebook", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png"}/
+          %li
+            %a{:href => "javascript:void(0)"}
+              %img{:alt => "Twitter", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png"}/
+          %li
+            %a{:href => "javascript:void(0)"}
+              %img{:alt => "YouTube", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png"}/

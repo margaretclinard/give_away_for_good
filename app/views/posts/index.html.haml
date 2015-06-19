@@ -1,3 +1,11 @@
-%ul
-  - @posts.each do |post|
-    = link_to post.category, user_post_path(post.user, post)
+%h2 #{@user.company}
+
+- if @posts.empty?
+  %p
+    #{@user.company} hasn't added any needs yet.
+- else
+  %ul
+    - @posts.each do |post|
+      = link_to post.category, user_post_path(post.user, post)
+
+= link_to "Back to All Listings", root_path

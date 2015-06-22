@@ -32,7 +32,7 @@
 .navigation {
   font-family: 'Open Sans', sans-serif;
   height: 75px;
-  padding: 10px;
+  padding: 20px;
   .title {
     float: left;
   }
@@ -43,10 +43,11 @@
   }
   a {
     color: white;
+    font-weight: bold;
   }
   a:hover {
-    background-color: #F16361;
-    padding: 4px;
+    background-color: #281D3D;
+    padding: 5px;
     border-radius: .5em;
   }
 }
@@ -60,7 +61,7 @@
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
-  background: black;
+  background: #281D3D;
   padding: $base-spacing;
   width: 100%;
   display: inline-block;

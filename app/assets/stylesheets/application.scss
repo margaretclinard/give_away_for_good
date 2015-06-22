@@ -6,15 +6,28 @@
 @import "sign-up-form";
 @import "users-index";
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
 #container {
   @include outer-container();
 }
 
+#needs-index {
+  text-align: center;
+  padding-top: 50px;
+  width: 150px;
+  height: 150px;
+  background-color: whitesmoke;
+  margin: 25px;
+  display: inline-block;
+  @include clearfix;
+}
+
 /****** NAV ******/
 .navigation {
-  $nav-color: desaturate(darken(whitesmoke, 20%), 30%);
+  font-family: 'Open Sans', sans-serif;
   height: 75px;
-  background-color: $nav-color;
   padding: 10px;
   .title {
     float: left;
@@ -24,6 +37,14 @@
     float: right;
     margin: 0 15px 0 0;
   }
+  a {
+    color: white;
+  }
+  a:hover {
+    background-color: #F16361;
+    padding: 4px;
+    border-radius: .5em;
+  }
 }
 
 /****** FOOTER ******/
@@ -31,12 +52,11 @@
   $base-spacing: 1.5em !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
-  $footer-background: desaturate(darken(whitesmoke, 20%), 30%);
   $footer-color: white;
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
-  background: $footer-background;
+  background: black;
   padding: $base-spacing;
   width: 100%;
   display: inline-block;

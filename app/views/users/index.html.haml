@@ -1,16 +1,15 @@
-.users-index-container
-  #js-parallax-window.parallax-window
-    .parallax-static-content
-      %b Connecting Communities with local non-profit needs
-    #js-parallax-background.parallax-background
+.index-header
+  %p Who Gives?
 
-  .index-header
-    %p Charities Involved
+%hr
 
-  - @users.each do |user|
-    .hover-tile-outer
-      .hover-tile-container
-        .hover-tile.hover-tile-visible
-        .hover-tile.hover-tile-hidden
-          = link_to "#{user.company}", user_posts_path(user)
-          %p Description: #{user.bio}
+.index-header
+  %p Charities Involved
+
+- @users.each do |user|
+  .hover-tile-outer
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{user.company}", user_posts_path(user)
+        %p Description: #{user.bio}

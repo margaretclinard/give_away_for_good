@@ -8,23 +8,26 @@
     = csrf_meta_tags
   %body#container
     %header
-      .navigation
-        %nav
-          .title
-            %h1 Give Away for Good
-            %p Connecting Communities with Local Non-Profit Needs
-          %ul
-            - if !logged_in?
-              - unless controller_name == "users" && action_name != "index"
-                %li= link_to "Sign Up", new_user_path
-              - unless controller_name == "user_sessions"
-                %li= link_to "Sign In", new_user_session_path
-            - else
-              %li= link_to "Sign Out", user_session_path, method: :delete
-              %li= link_to "View My Needs", user_posts_path(current_user)
-              %li= link_to "Add Need", new_post_path
-              %li= link_to "#{current_user.company}", user_path(current_user)
-            %li= link_to "Home", root_path
+      .users-index-container
+        #js-parallax-window.parallax-window
+          .parallax-static-content
+            .navigation
+              .title
+                %h1 Give Away for Good
+                %p Connecting Communities with Local Non-Profit Needs
+              %ul
+                - if !logged_in?
+                  - unless controller_name == "users" && action_name != "index"
+                    %li= link_to "Sign Up", new_user_path
+                  - unless controller_name == "user_sessions"
+                    %li= link_to "Sign In", new_user_session_path
+                - else
+                  %li= link_to "Sign Out", user_session_path, method: :delete
+                  %li= link_to "View My Needs", user_posts_path(current_user)
+                  %li= link_to "Add Need", new_post_path
+                  %li= link_to "#{current_user.company}", user_path(current_user)
+                %li= link_to "Home", root_path
+          #js-parallax-background.parallax-background
     %p.notice= notice
     %p.alert= alert
     = yield

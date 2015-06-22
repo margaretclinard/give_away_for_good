@@ -1,4 +1,10 @@
-%h2 #{@user.company}
+.index-header
+  %p #{@user.company}'s Listings
+
+- unless @user.twitter_nickname?
+  = link_to "Link your profile with your Twitter Account", "/auth/twitter"
+- else
+  %h3 Your posts will be published to Twitter via #{@user.twitter_nickname}
 
 - if @posts.empty?
   %p
@@ -6,6 +12,7 @@
 - else
   %ul
     - @posts.each do |post|
-      = link_to post.category, user_post_path(post.user, post)
+      #needs-index
+        = link_to "#{post.category}", user_post_path(post.user, post)
 
 = link_to "Back to All Listings", root_path

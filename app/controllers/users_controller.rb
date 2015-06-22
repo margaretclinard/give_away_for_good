@@ -41,6 +41,6 @@ class UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :company, :bio, :logo, :street1, :street2, :city, :state, :zip, :twitter_uid, :twitter_nickname, :oauth_token, :oauth_secret)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :company, :bio, :logo, :street1, :street2, :city, :state, :zip)
   end
 end

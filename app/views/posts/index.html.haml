@@ -1,11 +1,6 @@
 .index-header
   %p #{@user.company}'s Listings
 
-- unless @user.twitter_nickname?
-  = link_to "Link your profile with your Twitter Account", "/auth/twitter"
-- else
-  %h3 Your posts will be published to Twitter via #{@user.twitter_nickname}
-
 - if @posts.empty?
   %p
     #{@user.company} hasn't added any needs yet.

@@ -15,7 +15,7 @@ feature "User views profile" do
     page.should have_content("NSS")
     click_on "NSS"
     current_path.should == user_path(jerry)
-    page.should have_content("NSS's Profile")
+    page.should have_content("NSS")
     page.should have_content(jerry.street1)
     page.should have_content(jerry.street2)
     page.should have_content(jerry.city)

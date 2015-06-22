@@ -1,0 +1,8 @@
+%h2 Edit Need
+
+= simple_form_for @post do |f|
+  = f.input :category, collection: ["Books", "Canned Goods", "Clothes", "Furniture", "School Supplies", "Technology", "Other"]
+  / Need to work on dates within form
+  = f.input :deadline
+  = f.input :description
+  = f.button :submit, "Save Changes"

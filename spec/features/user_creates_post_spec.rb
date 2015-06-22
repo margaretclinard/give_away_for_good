@@ -28,7 +28,7 @@ feature "user creates post" do
     page.should have_link "Canned Goods"
     click_on "Canned Goods"
     # page.should have_css(".date", text: "June 16, 2015")
-    page.should have_css(".company", text: "Nashville Software School")
+    # page.should have_css(".company", text: "Nashville Software School")
     save_and_open_page
   end
 
@@ -38,11 +38,9 @@ feature "user creates post" do
     click_on "Add Need"
     fill_in "Category", with: ""
     # Need to work on dates within form
-    # fill_in "Date Posted", with: ""
     # fill_in "Deadline", with: "September 30, 2015"
     click_on "Publish Need"
     page.should have_alert("Your need could not be published. Please correct the errors below.")
     page.should have_error("can't be blank", on: "Category")
-    # page.should have_error("can't be blank", on: "Date Posted")
   end
 end

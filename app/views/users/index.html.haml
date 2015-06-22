@@ -7,7 +7,7 @@
   %p By Non-Profit
 
 - @users.each do |user|
-  .hover-tile-outer
+  .hover-tile-outer{ :style => "background-image: url(#{user.logo})" }
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
@@ -18,8 +18,66 @@
 .index-header
   %p By Category
 
-- @posts.each do |post|
-  .hover-tile-outer
+
+.index-header
+  %p Books
+- @posts_books.each do |post|
+  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{post.category}", user_posts_path(post.user, post)
+        %p #{post.created_at}
+
+.index-header
+  %p Canned Goods
+- @posts_canned_goods.each do |post|
+  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{post.category}", user_posts_path(post.user, post)
+
+.index-header
+  %p Clothes
+- @posts_clothes.each do |post|
+  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{post.category}", user_posts_path(post.user, post)
+
+.index-header
+  %p Furniture
+- @posts_furniture.each do |post|
+  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{post.category}", user_posts_path(post.user, post)
+
+.index-header
+  %p School Supplies
+- @posts_school.each do |post|
+  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{post.category}", user_posts_path(post.user, post)
+
+.index-header
+  %p Technology
+- @posts_technology.each do |post|
+  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{post.category}", user_posts_path(post.user, post)
+
+.index-header
+  %p Other
+- @posts_other.each do |post|
+  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden

@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @posts = Post.all
+    @posts_canned_goods = Post.where(category:"Canned Goods")
+    @posts_books = Post.where(category:"Books")
+    @posts_clothes = Post.where(category:"Clothes")
+    @posts_furniture = Post.where(category:"Furniture")
+    @posts_school = Post.where(category:"School Supplies")
+    @posts_technology = Post.where(category:"Technology")
+    @posts_other = Post.where(category:"Other")
   end
 
   def new

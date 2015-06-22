@@ -9,6 +9,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 
+.notice {
+  text-align: center;
+}
+
 #container {
   @include outer-container();
 }

@@ -2,6 +2,7 @@
   text-align: center;
   font-size: 1.5em;
   font-family: 'Open Sans', sans-serif;
+  color: #281D3D;
 }
 
 /******* PARALLAX ********/
@@ -26,7 +27,7 @@ $parallax-background-height: $parallax-window-height * 2;
   background: url("http://i.forbesimg.com/media/2014/12/17/1217_charity-donation_1200x675.jpg");
   background-position: top;
   background-size: auto;
-  background-color: beige;
+  background-color: #281D3D;
   height: $parallax-background-height;
   left: 0;
   position: absolute;
@@ -45,7 +46,7 @@ $parallax-background-height: $parallax-window-height * 2;
   background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
   background-position: top;
   background-size: cover;
-  background-color: beige;
+  background-color: #281D3D;
   border: 1px solid $base-border-color;
   cursor: pointer;
   height: $hover-tile-height;
@@ -62,8 +63,13 @@ $parallax-background-height: $parallax-window-height * 2;
   }
 
   .hover-tile-container:hover > .hover-tile {
-    background: #B83D4B;
+    background: #281D3D;
     @include transform(translate(0, -100%));
+    a {
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+    }
 
   }
 
@@ -112,11 +118,11 @@ $parallax-background-height: $parallax-window-height * 2;
   }
 
   .images-wrapper {
-    @include background(url('https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
-    background-color: $side-image-background-top;
+    // @include background(url('https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+    // background-color: $side-image-background-top;
     background-size: cover;
     border-bottom: $side-image-border;
-    display: block;
+    // display: inline-block;
     min-height: 8em;
     padding: 3em;
 

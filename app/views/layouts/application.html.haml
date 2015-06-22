@@ -15,44 +15,22 @@
               .title
                 %h1 Give Away for Good
                 %p Connecting Communities with Local Non-Profit Needs
-              %ul
-                - if !logged_in?
-                  - unless controller_name == "users" && action_name != "index"
-                    %li= link_to "Sign Up", new_user_path
-                  - unless controller_name == "user_sessions"
-                    %li= link_to "Sign In", new_user_session_path
-                - else
-                  %li= link_to "Sign Out", user_session_path, method: :delete
-                  %li= link_to "View My Needs", user_posts_path(current_user)
-                  %li= link_to "Add Need", new_post_path
-                  %li= link_to "#{current_user.company}", user_path(current_user)
-                %li= link_to "Home", root_path
           #js-parallax-background.parallax-background
+      .menu-bar
+        %ul
+          %li= link_to "Home", root_path
+          - if !logged_in?
+            - unless controller_name == "users" && action_name != "index"
+              %li= link_to "Sign Up", new_user_path
+            - unless controller_name == "user_sessions"
+              %li= link_to "Sign In", new_user_session_path
+          - else
+            %li= link_to "Add Need", new_post_path
+            %li= link_to "View My Needs", user_posts_path(current_user)
+            %li= link_to "#{current_user.company}", user_path(current_user)
+            %li= link_to "Sign Out", user_session_path, method: :delete
     %p.notice= notice
     %p.alert= alert
     = yield
 
     %footer.footer-2{:role => "contentinfo"}
-      %ul
-        %li
-          %a{:href => "javascript:void(0)"} About
-        %li
-          %a{:href => "javascript:void(0)"} Contact
-        %li
-          %a{:href => "javascript:void(0)"} Products
-      .footer-secondary-links
-        %ul
-          %li
-            %a{:href => "javascript:void(0)"} Terms and Conditions
-          %li
-            %a{:href => "javascript:void(0)"} Privacy Policy
-        %ul.footer-social
-          %li
-            %a{:href => "javascript:void(0)"}
-              %img{:alt => "Facebook", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png"}/
-          %li
-            %a{:href => "javascript:void(0)"}
-              %img{:alt => "Twitter", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png"}/
-          %li
-            %a{:href => "javascript:void(0)"}
-              %img{:alt => "YouTube", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png"}/

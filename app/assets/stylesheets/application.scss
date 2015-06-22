@@ -32,23 +32,31 @@
 .navigation {
   font-family: 'Open Sans', sans-serif;
   height: 75px;
-  padding: 20px;
+  padding: 15px;
   .title {
     float: left;
+    font-size: 14pt;
+    text-shadow: 1px 1px #281D3D;
   }
+}
+
+/****** NAVBAR ******/
+.menu-bar {
+  margin: auto;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  height: 75px;
+  padding-top: 15px;
+  background-color: #281D3D;
   li {
     display: inline-block;
-    float: right;
-    margin: 0 15px 0 0;
+    margin: 10px;
   }
   a {
     color: white;
-    font-weight: bold;
   }
   a:hover {
-    background-color: #281D3D;
-    padding: 5px;
-    border-radius: .5em;
+    font-weight: bold;
   }
 }
 

@@ -9,6 +9,9 @@
     %p #{@user.city}, #{@user.state} #{@user.zip}
     %p Contact: #{@user.name}
     %p Email: #{@user.email}
+    - if logged_in?
+      =link_to "All Listings", user_posts_path(current_user)
 
-    -if current_user == @user
+    - if current_user == @user
       =link_to "Edit Profile", edit_user_path(current_user)
+

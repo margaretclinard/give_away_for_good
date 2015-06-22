@@ -4,12 +4,23 @@
 %hr
 
 .index-header
-  %p Charities Involved
+  %p By Non-Profit
 
 - @users.each do |user|
   .hover-tile-outer
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{user.company}", user_posts_path(user)
-        %p Description: #{user.bio}
+        = link_to "#{user.company}", user_path(user)
+
+%hr
+
+.index-header
+  %p By Category
+
+- @posts.each do |post|
+  .hover-tile-outer
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{post.category}", user_posts_path(post.user, post)

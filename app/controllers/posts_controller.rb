@@ -1,3 +1,6 @@
+require "twitter"
+require "oauth"
+
 class PostsController < ApplicationController
   before_filter :load_post
   before_filter :load_user, except: [:new, :create, :edit, :update, :destroy]
@@ -10,6 +13,7 @@ class PostsController < ApplicationController
   def create
     @post.user = current_user
     if @post.save
+      tweet
       redirect_to user_posts_path(current_user), notice: "Your need has been published."
     else
       flash.alert = "Your need could not be published. Please correct the errors below."
@@ -50,6 +54,20 @@ class PostsController < ApplicationController
 
   def load_user
     @user = User.find(params[:user_id])
+  end
+
+  def tweet
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['0s2juCWWEKw2jfcKBWyaCOSHM']
+      config.consumer_secret     = ENV['U9xUklrRH98HxdOa772m6zDOYfn7apQQq7VVIeUyDLFqZo0Eb5']
+      config.access_token        = @post.author.oauth_token
+      config.access_token_secret = @post.author.oauth_secret
+    end
+    client.update("We have a new need! Help us by giving back #{@post.category} - #{absolute_url}")
+  end
+
+  def absolute_url
+    request.base_url  + "/users/1" + request.original_fullpath + "/#{@post.id}"
   end
 
   def post_params

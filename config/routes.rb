@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#index'
+  get 'auth/twitter/callback', to: 'omniauth_callbacks#twitter'
 
   resources :posts, only: [:new, :create, :edit, :update, :destroy]
   resource :user_session, only: [:new, :create, :destroy]

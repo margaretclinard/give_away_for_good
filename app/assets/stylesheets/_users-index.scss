@@ -2,11 +2,10 @@
   text-align: center;
   font-size: 1.5em;
   font-family: 'Open Sans', sans-serif;
-  color: #281D3D;
 }
 
 /******* PARALLAX ********/
-$parallax-window-height: 30em;
+$parallax-window-height: 20em;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
@@ -24,10 +23,10 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 
 .parallax-background {
-  background: url("http://i.forbesimg.com/media/2014/12/17/1217_charity-donation_1200x675.jpg");
+  background: url("http://www.redletterchristians.org/wp-content/uploads/Charity.jpg");
   background-position: top;
   background-size: auto;
-  background-color: #281D3D;
+  background-color: black;
   height: $parallax-background-height;
   left: 0;
   position: absolute;
@@ -46,7 +45,7 @@ $parallax-background-height: $parallax-window-height * 2;
   background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
   background-position: top;
   background-size: cover;
-  background-color: #281D3D;
+  background-color: black;
   border: 1px solid $base-border-color;
   cursor: pointer;
   height: $hover-tile-height;
@@ -54,7 +53,8 @@ $parallax-background-height: $parallax-window-height * 2;
   display: inline-block;
 
   @include media($medium-screen) {
-    width: 18%;
+    margin: 25px;
+    width: 15%;
   }
 
   .hover-tile-container {
@@ -63,7 +63,7 @@ $parallax-background-height: $parallax-window-height * 2;
   }
 
   .hover-tile-container:hover > .hover-tile {
-    background: #281D3D;
+    background: black;
     @include transform(translate(0, -100%));
     a {
       color: white;
@@ -80,6 +80,7 @@ $parallax-background-height: $parallax-window-height * 2;
     height: inherit;
     overflow: hidden;
     padding: $base-spacing;
+    text-align: center;
   }
 
   .hover-tile-hidden {
@@ -97,6 +98,24 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 
 /****** USER PROFILE *******/
+.profile-title {
+  text-align: center;
+  h4 {
+    background: #BBB;
+    color: white;
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 800;
+    margin-bottom: 1.3em;
+    padding: 3px 8px;
+    text-transform: uppercase;
+  }
+}
+
+.side-image {
+  margin-left: 200px;
+}
+
 .images-wrapper {
   background-size: cover;
   min-height: 8em;
@@ -114,17 +133,6 @@ $parallax-background-height: $parallax-window-height * 2;
   padding: 1em 1em 4em 1em;
   h1 {
     margin-bottom: 0.9em;
-  }
-
-  h4 {
-    background: #BBB;
-    color: white;
-    display: inline-block;
-    font-size: 0.75em;
-    font-weight: 800;
-    margin-bottom: 1.3em;
-    padding: 3px 8px;
-    text-transform: uppercase;
   }
 
   p {

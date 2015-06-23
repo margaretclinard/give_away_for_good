@@ -5,11 +5,17 @@
 
 @import "sign-up-form";
 @import "users-index";
+@import "post-show";
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+.alert {
+  color: red;
+  text-align: center;
+}
 
-.notice, .alert {
+.notice {
+  color: green;
   text-align: center;
 }
 
@@ -17,26 +23,17 @@
   @include outer-container();
 }
 
-#needs-index {
-  text-align: center;
-  padding-top: 50px;
-  width: 150px;
-  height: 150px;
-  background-color: whitesmoke;
-  margin: 25px;
-  display: inline-block;
-  @include clearfix;
-}
-
 /****** NAV ******/
 .navigation {
   font-family: 'Open Sans', sans-serif;
   height: 75px;
   padding: 15px;
+  float: left;
   .title {
-    float: left;
-    font-size: 14pt;
-    text-shadow: 1px 1px #281D3D;
+    p {
+      text-align: center;
+      font-size: 2em;
+    }
   }
 }
 
@@ -47,7 +44,7 @@
   font-family: 'Open Sans', sans-serif;
   height: 75px;
   padding-top: 15px;
-  background-color: #281D3D;
+  background-color: black;
   li {
     display: inline-block;
     margin: 10px;
@@ -69,7 +66,7 @@
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
-  background: #281D3D;
+  background: black;
   padding: $base-spacing;
   width: 100%;
   display: inline-block;

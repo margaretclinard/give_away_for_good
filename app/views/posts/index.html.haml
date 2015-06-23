@@ -1,13 +1,13 @@
 .index-header
   %p #{@user.company}'s Listings
 
-- if @posts.empty?
-  %p
-    #{@user.company} hasn't added any needs yet.
-- else
-  %ul
-    - @posts.each do |post|
-      #needs-index
+.posts-show
+  - if @posts.empty?
+    %p
+      #{@user.company} hasn't added any needs yet.
+  - else
+    %ul
+      - @posts.each do |post|
         = link_to "#{post.category}", user_post_path(post.user, post)
 
-= link_to "Back to All Listings", root_path
+  = link_to "Back to All Listings", root_path

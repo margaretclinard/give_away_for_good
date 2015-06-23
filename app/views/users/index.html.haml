@@ -1,10 +1,13 @@
 .index-header
-  %p Who Gives?
+  %p How it Works
+%p Give Away for Good was created to help connect communities with local non-profit needs.
+%p Non-profits sign up to make a post.
+%p Community members can browse to view non-profits and their timely needs.
 
 %hr
 
 .index-header
-  %p By Non-Profit
+  %p Non-Profits Involved
 
 - @users.each do |user|
   .hover-tile-outer{ :style => "background-image: url(#{user.logo})" }
@@ -12,11 +15,13 @@
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
         = link_to "#{user.company}", user_path(user)
+        %p Member Since:
+        %p #{user.created_at.month}-#{user.created_at.day}-#{user.created_at.year}
 
 %hr
 
 .index-header
-  %p By Category
+  %p Needs by Category
 
 
 .index-header
@@ -26,8 +31,8 @@
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{post.category}", user_posts_path(post.user, post)
-        %p #{post.created_at}
+        = link_to "#{post.user.company}", user_posts_path(post.user, post)
+        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 
 .index-header
   %p Canned Goods
@@ -36,7 +41,8 @@
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{post.category}", user_posts_path(post.user, post)
+        = link_to "#{post.user.company}", user_posts_path(post.user, post)
+        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 
 .index-header
   %p Clothes
@@ -45,7 +51,8 @@
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{post.category}", user_posts_path(post.user, post)
+        = link_to "#{post.user.company}", user_posts_path(post.user, post)
+        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 
 .index-header
   %p Furniture
@@ -54,7 +61,8 @@
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{post.category}", user_posts_path(post.user, post)
+        = link_to "#{post.user.company}", user_posts_path(post.user, post)
+        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 
 .index-header
   %p School Supplies
@@ -63,7 +71,8 @@
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{post.category}", user_posts_path(post.user, post)
+        = link_to "#{post.user.company}", user_posts_path(post.user, post)
+        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 
 .index-header
   %p Technology
@@ -72,7 +81,8 @@
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{post.category}", user_posts_path(post.user, post)
+        = link_to "#{post.user.company}", user_posts_path(post.user, post)
+        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 
 .index-header
   %p Other
@@ -81,4 +91,5 @@
     .hover-tile-container
       .hover-tile.hover-tile-visible
       .hover-tile.hover-tile-hidden
-        = link_to "#{post.category}", user_posts_path(post.user, post)
+        = link_to "#{post.user.company}", user_posts_path(post.user, post)
+        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}

@@ -1,8 +1,10 @@
-%h2 Edit Need
+.index-header
+  %h2 Edit Listing
 
 = simple_form_for @post do |f|
-  = f.input :category, collection: ["Books", "Canned Goods", "Clothes", "Furniture", "School Supplies", "Technology", "Other"]
-  / Need to work on dates within form
-  = f.input :deadline
-  = f.input :description
-  = f.button :submit, "Save Changes"
+  #input
+    = f.input :category, collection: ["Books", "Canned Goods", "Clothes", "Furniture", "School Supplies", "Technology", "Other"]
+    / Need to work on dates within form
+    = f.input :deadline
+    = f.input :description
+    = f.button :submit, "Save Changes"

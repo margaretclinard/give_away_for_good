@@ -1,18 +1,18 @@
-%h1 Sign Up for Non-Profits
+.sign-up-title
+  %h1 Sign Up (Non-Profits Only)
 
-#sign-up-form
-  = simple_form_for @user do |f|
-    #input
-      = f.input :company, label: "Company Name"
-      = f.input :name, label: "Contact Name"
-      = f.input :email, label: "Contact Email"
-      = f.input :password
-      = f.input :password_confirmation
-      = f.input :bio, label: "Company Description"
-      = f.input :logo, label: "Logo Image URL"
-      = f.input :street1
-      = f.input :street2
-      = f.input :city
-      = f.input :state
-      = f.input :zip, label: "Zip Code"
-      = f.button :submit, "Sign Up"
+= simple_form_for @user do |f|
+  #input
+    = f.input :company, label: "Company Name"
+    = f.input :name, label: "Contact Name"
+    = f.input :email, label: "Contact Email"
+    = f.input :password
+    = f.input :password_confirmation
+    = f.input :bio, label: "Company Description"
+    = f.input :logo, label: "Logo Image URL"
+    = f.input :street1
+    = f.input :street2
+    = f.input :city
+    = f.input :state
+    = f.input :zip, label: "Zip Code"
+    = f.button :submit, "Sign Up"

@@ -1,6 +1,8 @@
-%h1 Sign In
+.sign-up-title
+  %h1 Sign In (Non-Profits Only)
 
 = simple_form_for @user, url: user_session_path do |f|
-  = f.input :email
-  = f.input :password
-  = f.button :submit, "Sign In"
+  #input
+    = f.input :email
+    = f.input :password
+    = f.button :submit, "Sign In"

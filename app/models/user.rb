@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
+  validates :bio, presence: true
 
 end

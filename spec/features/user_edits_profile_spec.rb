@@ -53,7 +53,6 @@ feature "User edits profile" do
     fill_in "Bio", with: "Edited description"
     fill_in "Email", with: ""
     click_on "Save Changes"
-    save_and_open_page
     page.should have_content("Please fix the errors below to continue.")
     field_labeled("Name").value.should == "Johnathan"
     field_labeled("Bio").value.should == "Edited description"

@@ -6,7 +6,7 @@ feature "User Signs Up" do
   end
 
   scenario "Happy Path" do
-    page.should_not have_link("Sign Up for Non-Profits")
+    page.should_not have_link("Sign Up (Non-Profits Only)")
     fill_in "Company Name", with: "Nashville Software School"
     fill_in "Contact Name", with: "Joe"
     fill_in "Contact Email", with: "joe@example.com"

@@ -29,7 +29,6 @@ feature "user creates post" do
     click_on "Canned Goods"
     # page.should have_css(".date", text: "June 16, 2015")
     # page.should have_css(".company", text: "Nashville Software School")
-    save_and_open_page
   end
 
   scenario "sad path" do

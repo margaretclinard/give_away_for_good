@@ -1,8 +1,10 @@
-%h2 Add Need
+.sign-up-title
+  %h2 Add Need
 
 = simple_form_for @post do |f|
-  = f.input :category, collection: ["Books", "Canned Goods", "Clothes", "Furniture", "School Supplies", "Technology", "Other"]
-  / Need to work on dates within form
-  = f.input :deadline
-  = f.input :description
-  = f.button :submit, "Publish Need"
+  #input
+    = f.input :category, collection: ["Books", "Canned Goods", "Clothes", "Furniture", "School Supplies", "Technology", "Other"]
+    / Need to work on dates within form
+    = f.input :deadline
+    = f.input :description
+    = f.button :submit, "Publish Need"

@@ -19,16 +19,29 @@
               %li= link_to "Sign In", new_user_session_path
           - else
             %li= link_to "Sign Out", user_session_path, method: :delete
+          %li Non-Profits:
       #js-parallax-window.parallax-window
         .parallax-static-content
-          %p Connecting Communities with Local Non-Profit Needs
+          %p Connecting Nashville with Local Non-Profit Needs
         #js-parallax-background.parallax-background
       .menu-bar-bottom#top
+        - if !logged_in?
+          %a.arrow{:href => '#top'}
+            %i.fa.fa-angle-down
         - if logged_in?
           %ul
-            %li= link_to "#{current_user.company}", user_path(current_user)
-            %li= link_to "Add Need", new_post_path
-            %li= link_to "View My Needs", user_posts_path(current_user)
+            %a{:href => user_path(current_user)}
+              %li
+                %i.fa.fa-user
+                #{current_user.company}
+            %a{:href => new_post_path}
+              %li
+                %i.fa.fa-plus
+                Add Need
+            %a{:href => user_posts_path(current_user)}
+              %li
+                %i.fa.fa-eye
+                My Needs
 
     %p.notice= notice
     %p.alert= alert

@@ -1,37 +1,79 @@
-.index-header#categories
-  %p Community Needs
-  %ul
-    %a{:href => "#books" }
-      %li
-        %i.fa.fa-book
-        %p Books
-    %a{:href => "#canned-goods" }
-      %li
-        %i.fa.fa-shopping-cart
-        %p Canned Goods
-    %a{:href => "#clothes" }
+.index-header#who-gives.mission
+  %p.mission-title Who Gives?
+
+  %p.mission-title GIVE AWAY for GOOD was created to inspire Nashville dwellers to give away unused belongings for the betterment of the community.
+
+  .examples
+    %ul
       %li
         %i.fa.fa-female
-        %p Clothes
-    %a{:href => "#furniture" }
+        %p.mission-sub-title Have a pile of clothes you never wear and would otherwise trash?
       %li
         %i.fa.fa-bed
-        %p Furniture
-    %a{:href => "#school-supplies" }
+        %p.mission-sub-title Redesigning your interior and purging old furniture?
       %li
-        %i.fa.fa-pencil
-        %p School Supplies
-    %a{:href => "#technology" }
-      %li
-        %i.fa.fa-laptop
-        %p Technology
-    %a{:href => "#other" }
-      %li
-        %i.fa.fa-plus
-        %p Other
+        %i.fa.fa-book
+        %p.mission-sub-title Old text books stacking up in the corner of your room?
+
+  %a{:href => '#why-give'}
+    %i.fa.fa-angle-down
+
+%hr#why-give
+
+.index-header.mission
+  %p.mission-title Why give?
+  %p.mission-title Being an engaged community member means giving back to those in need.
+  %p.mission-sub-title Browse Needs by Non-Profit or by Category to Get Started
+
+  .categories
+    %ul
+      %a{:href => '#non-profits'}
+        %li
+          %i.fa.fa-building
+          %p Needs by Non-Profit
+      %a{:href => '#categories'}
+        %li
+          %i.fa.fa-tasks
+          %p Needs by Category
 
 %hr
-.index-header
+
+.grey
+  %hr
+  .index-header.categories#categories
+    %p.mission-title Community Needs
+    %ul
+      %a{:href => "#books" }
+        %li
+          %i.fa.fa-book
+          %p Books
+      %a{:href => "#canned-goods" }
+        %li
+          %i.fa.fa-shopping-cart
+          %p Canned Goods
+      %a{:href => "#clothes" }
+        %li
+          %i.fa.fa-female
+          %p Clothes
+      %a{:href => "#furniture" }
+        %li
+          %i.fa.fa-bed
+          %p Furniture
+      %a{:href => "#school-supplies" }
+        %li
+          %i.fa.fa-pencil
+          %p School Supplies
+      %a{:href => "#technology" }
+        %li
+          %i.fa.fa-laptop
+          %p Technology
+      %a{:href => "#other" }
+        %li
+          %i.fa.fa-plus
+          %p Other
+
+  %hr
+.index-header#non-profits
   %p Non-Profits Involved
 
 - @users.each do |user|
@@ -43,23 +85,23 @@
         %p Member Since:
         %p #{user.created_at.month}-#{user.created_at.day}-#{user.created_at.year}
 
-%hr
-
-.index-header#books.category
-  %i.fa.fa-book
-  %p Books
-- @posts_books.each do |post|
-  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{post.user.company}", user_posts_path(post.user, post)
-        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
-%br
-.arrow-up
-  %a{:href => "#top"}
-    %i.fa.fa-angle-double-up
-%hr
+.grey
+  %hr
+  .index-header#books.category
+    %i.fa.fa-book
+    %p Books
+  - @posts_books.each do |post|
+    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+      .hover-tile-container
+        .hover-tile.hover-tile-visible
+        .hover-tile.hover-tile-hidden
+          = link_to "#{post.user.company}", user_posts_path(post.user, post)
+          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  %br
+  .arrow-up
+    %a{:href => "#top"}
+      %i.fa.fa-angle-double-up
+  %hr
 
 .index-header#canned-goods.category
   %i.fa.fa-shopping-cart
@@ -75,23 +117,25 @@
 .arrow-up
   %a{:href => "#top"}
     %i.fa.fa-angle-double-up
-%hr
 
-.index-header#clothes.category
-  %i.fa.fa-female
-  %p Clothes
-- @posts_clothes.each do |post|
-  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{post.user.company}", user_posts_path(post.user, post)
-        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
-%br
-.arrow-up
-  %a{:href => "#top"}
-    %i.fa.fa-angle-double-up
-%hr
+
+.grey
+  %hr
+  .index-header#clothes.category
+    %i.fa.fa-female
+    %p Clothes
+  - @posts_clothes.each do |post|
+    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+      .hover-tile-container
+        .hover-tile.hover-tile-visible
+        .hover-tile.hover-tile-hidden
+          = link_to "#{post.user.company}", user_posts_path(post.user, post)
+          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  %br
+  .arrow-up
+    %a{:href => "#top"}
+      %i.fa.fa-angle-double-up
+  %hr
 
 .index-header#furniture.category
   %i.fa.fa-bed
@@ -107,23 +151,24 @@
 .arrow-up
   %a{:href => "#top"}
     %i.fa.fa-angle-double-up
-%hr
 
-.index-header#school-supplies.category
-  %i.fa.fa-pencil
-  %p School Supplies
-- @posts_school.each do |post|
-  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{post.user.company}", user_posts_path(post.user, post)
-        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
-%br
-.arrow-up
-  %a{:href => "#top"}
-    %i.fa.fa-angle-double-up
-%hr
+.grey
+  %hr
+  .index-header#school-supplies.category
+    %i.fa.fa-pencil
+    %p School Supplies
+  - @posts_school.each do |post|
+    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+      .hover-tile-container
+        .hover-tile.hover-tile-visible
+        .hover-tile.hover-tile-hidden
+          = link_to "#{post.user.company}", user_posts_path(post.user, post)
+          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  %br
+  .arrow-up
+    %a{:href => "#top"}
+      %i.fa.fa-angle-double-up
+  %hr
 
 .index-header#technology.category
   %i.fa.fa-laptop
@@ -139,19 +184,20 @@
 .arrow-up
   %a{:href => "#top"}
     %i.fa.fa-angle-double-up
-%hr
 
-.index-header#other.category
-  %i.fa.fa-plus
-  %p Other
-- @posts_other.each do |post|
-  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{post.user.company}", user_posts_path(post.user, post)
-        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
-%br
-.arrow-up
-  %a{:href => "#top"}
-    %i.fa.fa-angle-double-up
+.grey
+  %hr
+  .index-header#other.category
+    %i.fa.fa-plus
+    %p Other
+  - @posts_other.each do |post|
+    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+      .hover-tile-container
+        .hover-tile.hover-tile-visible
+        .hover-tile.hover-tile-hidden
+          = link_to "#{post.user.company}", user_posts_path(post.user, post)
+          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  %br
+  .arrow-up
+    %a{:href => "#top"}
+      %i.fa.fa-angle-double-up

@@ -1,5 +1,9 @@
 .profile-title
   %h4 #{@user.company}
+  %a{:href => user_posts_path(@user)}
+    %p
+      %i.fa.fa-eye
+      View Needs
 
 .side-image
   .images-wrapper
@@ -12,6 +16,9 @@
     %p Contact: #{@user.name}
     %p Email: #{@user.email}
     - if current_user == @user
-      =link_to "Edit Profile", edit_user_path(current_user)
-    %br
-    =link_to "All Listings", user_posts_path(@user)
+      %a{:href => edit_user_path(current_user)}
+        %i.fa.fa-pencil
+        Edit
+
+/ #map-container
+/   #map-canvas

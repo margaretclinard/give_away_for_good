@@ -25,7 +25,7 @@ feature "User edits profile" do
     fill_in "Password", with: "password1"
     click_button "Sign In"
     click_on "NSS"
-    click_on "Edit Profile"
+    click_on "Edit"
     current_path.should == edit_user_path(joe)
     field_labeled("Name").value.should == "Joe"
     field_labeled("Bio").value.should == joe.bio
@@ -38,7 +38,7 @@ feature "User edits profile" do
     page.should have_content("Gerald")
     page.should have_content("Edited description")
     page.should have_content("b@c.com")
-    page.should have_link("Edit Profile")
+    page.should have_link("Edit")
   end
 
   scenario "sad path user edits profile" do
@@ -48,7 +48,7 @@ feature "User edits profile" do
     fill_in "Password", with: "password1"
     click_button "Sign In"
     click_on "BBBS"
-    click_on "Edit Profile"
+    click_on "Edit"
     fill_in "Name", with: "Johnathan"
     fill_in "Bio", with: "Edited description"
     fill_in "Email", with: ""

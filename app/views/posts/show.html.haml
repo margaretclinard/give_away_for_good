@@ -1,11 +1,12 @@
 .index-header
-  %h1= @post.category
+  %h1= "#{@post.user.company}"
+  %h2= "#{@post.category}"
 
 .post-show
-  %p Posted By: #{@post.user.company}
-  %p Date posted: #{@post.created_at.month}-#{@post.created_at.day}-#{@post.created_at.year}
   %p Deadline: #{@post.deadline.month}-#{@post.deadline.day}-#{@post.deadline.year}
+  %p Date Posted: #{@post.created_at.month}-#{@post.created_at.day}-#{@post.created_at.year}
   %p Description: #{@post.description}
+  %p Questions? Contact #{@post.user.name} at #{@post.user.email}.
 
   - if logged_in? && current_user == @post.user
     %p

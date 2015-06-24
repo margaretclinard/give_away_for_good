@@ -1,13 +1,18 @@
 .index-header
   %p #{@user.company}'s Listings
-
 .posts-show
   - if @posts.empty?
     %p
       #{@user.company} hasn't added any needs yet.
   - else
-    %ul
+    %ul.show
       - @posts.each do |post|
-        = link_to "#{post.category}", user_post_path(post.user, post)
+        %a{:href => user_post_path(post.user, post)}
+          %li
+            %p #{post.category}
+            %p Deadline:
+            %p #{post.deadline.month}-#{post.deadline.day}-#{post.deadline.year}
 
-  = link_to "Back to All Listings", root_path
+%ul#posts-show-nav
+  %li= link_to "Home", root_path
+  %li= link_to "Learn more about #{@user.company}", user_path(@user)

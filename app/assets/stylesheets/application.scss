@@ -30,6 +30,7 @@
 
 /****** NAV ******/
 .navigation {
+  color: white;
   font-family: 'Montserrat', sans-serif;
   height: 60px;
   padding: 20px;
@@ -67,6 +68,27 @@
     font-family: 'Montserrat', sans-serif;
     list-style: none;
   }
+  .arrow {
+    font-size: 2em;
+  }
+}
+
+.mission {
+  margin: 125px;
+  color: #281D3D;
+  a{
+    color: #281D3D;
+  }
+}
+
+.mission-title {
+  font-family: 'Volkhov', serif;
+}
+
+.mission-sub-title {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: .5em;
 }
 
 /****** FOOTER ******/

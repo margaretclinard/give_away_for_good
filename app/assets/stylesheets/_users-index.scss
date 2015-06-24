@@ -13,7 +13,7 @@
   }
 }
 
-#categories {
+.categories {
   li {
     display: inline-block;
     margin: 20px;
@@ -28,9 +28,6 @@
   a {
     color: white;
   }
-  li a:hover {
-    color: #281D3D;
-  }
   li:hover {
     color: #281D3D;
     background-color: white;
@@ -42,17 +39,30 @@
   margin: auto;
   margin-bottom: 10px;
   text-align: center;
-  width: 125px;
-  height: 125px;
+  width: 115px;
+  height: 115px;
   padding-top: 20px;
   border-radius: 100%;
   background-color: #281D3D;
   color: white;
   font-size: 16pt;
+  line-height: 125%;
 }
 
+.grey {
+  background-color: whitesmoke;
+}
+
+.examples {
+  li {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+  }
+}
 /******* PARALLAX ********/
-$parallax-window-height: 28em;
+$parallax-window-height: 34em;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
@@ -68,7 +78,7 @@ $parallax-background-height: $parallax-window-height * 2;
   margin-top: 5px;
   font-size: 2em;
   color: #281D3D;
-  padding: 0 0 28em 0;
+  padding: 0 0 34em 0;
   position: relative;
   z-index: 9;
 }
@@ -89,7 +99,7 @@ $parallax-background-height: $parallax-window-height * 2;
 /******* CHARITY TILES *******/
 .hover-tile-outer {
   $base-border-color: gainsboro !default;
-  $base-line-height: 1.5em !default;
+  $base-line-height: 1em !default;
   $medium-screen: em(640) !default;
   $hover-tile-height: 10em;
   $base-spacing: 1.5em;
@@ -122,7 +132,6 @@ $parallax-background-height: $parallax-window-height * 2;
       font-family: 'Open Sans', sans-serif;
       text-align: center;
     }
-
   }
 
   .hover-tile {

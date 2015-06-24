@@ -38,6 +38,19 @@
   }
 }
 
+.category {
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 125px;
+  height: 125px;
+  padding-top: 20px;
+  border-radius: 100%;
+  background-color: #281D3D;
+  color: white;
+  font-size: 16pt;
+}
+
 /******* PARALLAX ********/
 $parallax-window-height: 28em;
 $parallax-background-height: $parallax-window-height * 2;

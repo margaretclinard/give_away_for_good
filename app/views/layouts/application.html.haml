@@ -8,26 +8,28 @@
     = csrf_meta_tags
   %body#container
     %header
-      .users-index-container
-        #js-parallax-window.parallax-window
-          .parallax-static-content
-            .navigation
-              .title
-                %p Give Away for Good
-          #js-parallax-background.parallax-background
-      .menu-bar
+      .navigation
+        .title
+          %p=link_to "GIVE AWAY for GOOD", root_path
         %ul
-          %li= link_to "Home", root_path
           - if !logged_in?
             - unless controller_name == "users" && action_name != "index"
               %li= link_to "Sign Up", new_user_path
             - unless controller_name == "user_sessions"
               %li= link_to "Sign In", new_user_session_path
           - else
+            %li= link_to "Sign Out", user_session_path, method: :delete
+      #js-parallax-window.parallax-window
+        .parallax-static-content
+          %p Connecting Communities with Local Non-Profit Needs
+        #js-parallax-background.parallax-background
+      .menu-bar-bottom#top
+        - if logged_in?
+          %ul
+            %li= link_to "#{current_user.company}", user_path(current_user)
             %li= link_to "Add Need", new_post_path
             %li= link_to "View My Needs", user_posts_path(current_user)
-            %li= link_to "#{current_user.company}", user_path(current_user)
-            %li= link_to "Sign Out", user_session_path, method: :delete
+
     %p.notice= notice
     %p.alert= alert
     = yield

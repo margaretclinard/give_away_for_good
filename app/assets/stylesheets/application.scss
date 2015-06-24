@@ -8,6 +8,9 @@
 @import "post-show";
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Volkhov);
+@import "font-awesome";
 
 .alert {
   color: red;
@@ -15,8 +18,10 @@
 }
 
 .notice {
-  color: green;
+  background-color: #281D3D;
+  color: white;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #container {
@@ -25,35 +30,42 @@
 
 /****** NAV ******/
 .navigation {
-  font-family: 'Open Sans', sans-serif;
-  height: 75px;
-  padding: 15px;
-  float: left;
+  font-family: 'Montserrat', sans-serif;
+  height: 60px;
+  padding: 20px;
+  background-color: #281D3D;
   .title {
-    p {
-      text-align: center;
-      font-size: 2em;
-    }
+    float: left;
+    color: white;
   }
-}
-
-/****** NAVBAR ******/
-.menu-bar {
-  margin: auto;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  height: 75px;
-  padding-top: 15px;
-  background-color: black;
   li {
+    float: right;
     display: inline-block;
-    margin: 10px;
+    padding: 0 10px 0 10px;
+  }
+  li:nth-child {
+    border-right:0;
   }
   a {
     color: white;
   }
   a:hover {
     font-weight: bold;
+  }
+}
+
+.menu-bar-bottom {
+  height: 40px;
+  background-color: #281D3D;
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 10px;
+  }
+  a {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
   }
 }
 
@@ -66,7 +78,7 @@
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
-  background: black;
+  background: #281D3D;
   padding: $base-spacing;
   width: 100%;
   display: inline-block;

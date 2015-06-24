@@ -1,11 +1,36 @@
-.index-header
-  %p How it Works
-%p Give Away for Good was created to help connect communities with local non-profit needs.
-%p Non-profits sign up to make a post.
-%p Community members can browse to view non-profits and their timely needs.
+.index-header#categories
+  %p Community Needs
+  %ul
+    %a{:href => "#books" }
+      %li
+        %i.fa.fa-book
+        %p Books
+    %a{:href => "#canned-goods" }
+      %li
+        %i.fa.fa-shopping-cart
+        %p Canned Goods
+    %a{:href => "#clothes" }
+      %li
+        %i.fa.fa-female
+        %p Clothes
+    %a{:href => "#furniture" }
+      %li
+        %i.fa.fa-bed
+        %p Furniture
+    %a{:href => "#school-supplies" }
+      %li
+        %i.fa.fa-pencil
+        %p School Supplies
+    %a{:href => "#technology" }
+      %li
+        %i.fa.fa-laptop
+        %p Technology
+    %a{:href => "#other" }
+      %li
+        %i.fa.fa-plus
+        %p Other
 
 %hr
-
 .index-header
   %p Non-Profits Involved
 
@@ -20,11 +45,8 @@
 
 %hr
 
-.index-header
-  %p Needs by Category
-
-
-.index-header
+.index-header#books
+  %i.fa.fa-book
   %p Books
 - @posts_books.each do |post|
   .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
@@ -33,8 +55,14 @@
       .hover-tile.hover-tile-hidden
         = link_to "#{post.user.company}", user_posts_path(post.user, post)
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+%br
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-double-up
+%hr
 
-.index-header
+.index-header#canned-goods
+  %i.fa.fa-shopping-cart
   %p Canned Goods
 - @posts_canned_goods.each do |post|
   .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
@@ -43,8 +71,14 @@
       .hover-tile.hover-tile-hidden
         = link_to "#{post.user.company}", user_posts_path(post.user, post)
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+%br
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-double-up
+%hr
 
-.index-header
+.index-header#clothes
+  %i.fa.fa-female
   %p Clothes
 - @posts_clothes.each do |post|
   .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
@@ -53,8 +87,14 @@
       .hover-tile.hover-tile-hidden
         = link_to "#{post.user.company}", user_posts_path(post.user, post)
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+%br
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-double-up
+%hr
 
-.index-header
+.index-header#furniture
+  %i.fa.fa-bed
   %p Furniture
 - @posts_furniture.each do |post|
   .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
@@ -63,8 +103,14 @@
       .hover-tile.hover-tile-hidden
         = link_to "#{post.user.company}", user_posts_path(post.user, post)
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+%br
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-double-up
+%hr
 
-.index-header
+.index-header#school-supplies
+  %i.fa.fa-pencil
   %p School Supplies
 - @posts_school.each do |post|
   .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
@@ -73,8 +119,14 @@
       .hover-tile.hover-tile-hidden
         = link_to "#{post.user.company}", user_posts_path(post.user, post)
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+%br
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-double-up
+%hr
 
-.index-header
+.index-header#technology
+  %i.fa.fa-laptop
   %p Technology
 - @posts_technology.each do |post|
   .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
@@ -83,8 +135,14 @@
       .hover-tile.hover-tile-hidden
         = link_to "#{post.user.company}", user_posts_path(post.user, post)
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+%br
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-double-up
+%hr
 
-.index-header
+.index-header#other
+  %i.fa.fa-plus
   %p Other
 - @posts_other.each do |post|
   .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
@@ -93,3 +151,7 @@
       .hover-tile.hover-tile-hidden
         = link_to "#{post.user.company}", user_posts_path(post.user, post)
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+%br
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-double-up

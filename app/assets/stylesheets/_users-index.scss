@@ -4,8 +4,42 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.arrow-up {
+  font-size: 3em;
+  color: #281d3d;
+  text-align: center;
+  a {
+    color: #281d3d;
+  }
+}
+
+#categories {
+  li {
+    display: inline-block;
+    margin: 20px;
+    width: 175px;
+    height: 175px;
+    padding-top: 45px;
+    border-radius: 100%;
+    background-color: #281D3D;
+    color: white;
+    font-size: 16pt;
+  }
+  a {
+    color: white;
+  }
+  li a:hover {
+    color: #281D3D;
+  }
+  li:hover {
+    color: #281D3D;
+    background-color: white;
+    border: 3px dotted #281D3D;
+  }
+}
+
 /******* PARALLAX ********/
-$parallax-window-height: 20em;
+$parallax-window-height: 28em;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
@@ -16,14 +50,19 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 
 .parallax-static-content {
-  color: white;
-  padding: 0 0 26em 0;
+  font-family: 'Volkhov', serif;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 2em;
+  color: #281D3D;
+  padding: 0 0 28em 0;
   position: relative;
   z-index: 9;
 }
 
 .parallax-background {
-  background: url("http://www.redletterchristians.org/wp-content/uploads/Charity.jpg");
+  opacity: 0.5;
+  background: url("http://i.forbesimg.com/media/2014/12/17/1217_charity-donation_1200x675.jpg");
   background-position: top;
   background-size: auto;
   background-color: black;
@@ -45,7 +84,7 @@ $parallax-background-height: $parallax-window-height * 2;
   background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
   background-position: top;
   background-size: cover;
-  background-color: black;
+  background-color: #281D3D;
   border: 1px solid $base-border-color;
   cursor: pointer;
   height: $hover-tile-height;
@@ -63,7 +102,7 @@ $parallax-background-height: $parallax-window-height * 2;
   }
 
   .hover-tile-container:hover > .hover-tile {
-    background: black;
+    background: #281D3D;
     @include transform(translate(0, -100%));
     a {
       color: white;

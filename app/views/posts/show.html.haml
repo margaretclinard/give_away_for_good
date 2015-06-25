@@ -1,18 +1,20 @@
 .index-header
-  %h1= "#{@post.user.company}"
-  %h2= "#{@post.category}"
+  %h1.mission-title= "#{@post.user.company}"
 
 .post-show
+  %p Category: #{@post.category}
   %p Deadline: #{@post.deadline.month}-#{@post.deadline.day}-#{@post.deadline.year}
   %p Date Posted: #{@post.created_at.month}-#{@post.created_at.day}-#{@post.created_at.year}
   %p Description: #{@post.description}
-  %p Questions? Contact #{@post.user.name} at #{@post.user.email}.
+  %p Questions?
+  %p Contact #{@post.user.name} at #{@post.user.email}.
 
   - if logged_in? && current_user == @post.user
-    %p
-      = link_to "Edit Listing", edit_post_path(@post)
-    %p
-      = link_to "Delete Listing", post_path(@post), method: :delete
+    %ul.posts-show-nav
+      %li
+        = link_to "Edit Listing", edit_post_path(@post)
+      %li
+        = link_to "Delete Listing", post_path(@post), method: :delete
 
-  %p
+  %p.posts-show-nav
     = link_to "Return to #{@post.user.company}'s Needs", user_posts_path(@post.user)

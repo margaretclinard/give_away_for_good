@@ -5,6 +5,7 @@
   padding: 20px;
   background-color: whitesmoke;
   border: 1px solid black;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .show {
@@ -34,13 +35,13 @@
 
 .posts-show-nav {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .85em;
+  text-transform: uppercase;
+  color: #281D3D;
   li {
     display: inline-block;
     margin: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: .85em;
-    text-transform: uppercase;
-    color: #281D3D;
   }
   a {
     color: #281D3D;

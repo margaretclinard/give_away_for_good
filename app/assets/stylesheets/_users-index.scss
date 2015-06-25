@@ -84,40 +84,6 @@
     color: #281d3d;
   }
 }
-/******* PARALLAX ********/
-$parallax-window-height: 32em;
-$parallax-background-height: $parallax-window-height * 2;
-
-.parallax-window {
-  max-height: $parallax-window-height;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.parallax-static-content {
-  font-family: 'Volkhov', serif;
-  text-align: center;
-  margin-top: 5px;
-  font-size: 2em;
-  color: #281D3D;
-  padding: 13px 0 32em 0;
-  position: relative;
-  z-index: 9;
-}
-
-.parallax-background {
-  opacity: 0.5;
-  background: url("http://i.forbesimg.com/media/2014/12/17/1217_charity-donation_1200x675.jpg");
-  background-position: top;
-  background-size: auto;
-  background-color: black;
-  height: $parallax-background-height;
-  left: 0;
-  position: absolute;
-  top: - $parallax-window-height / 3;
-  width: 100%;
-}
 
 /******* CHARITY TILES *******/
 .hover-tile-outer {
@@ -178,49 +144,5 @@ $parallax-background-height: $parallax-window-height * 2;
     h4 {
       margin: 0 0 0.5em 0;
     }
-  }
-}
-
-/****** USER PROFILE *******/
-.profile-title {
-  text-align: center;
-  h4 {
-    background: #BBB;
-    color: white;
-    display: inline-block;
-    font-size: 1.5em;
-    font-weight: 800;
-    margin-bottom: 1.3em;
-    padding: 3px 8px;
-    text-transform: uppercase;
-  }
-}
-
-.side-image {
-  margin-left: 200px;
-}
-
-.images-wrapper {
-  background-size: cover;
-  min-height: 8em;
-  padding: 3em;
-
-  @include media($large-screen) {
-    @include span-columns(4);
-    background-position: bottom;
-    background-size: cover;
-    border-right: 1px solid darken(transparentize(#5DAC5D, 0.8), 30%);
-  }
-}
-
-.side-image-content {
-  padding: 1em 1em 4em 1em;
-  h1 {
-    margin-bottom: 0.9em;
-  }
-
-  p {
-    color: $base-font-color;
-    line-height: $base-line-height;
   }
 }

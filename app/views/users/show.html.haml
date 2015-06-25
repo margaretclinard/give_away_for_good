@@ -9,12 +9,12 @@
   .images-wrapper
     %img(src="#{@user.logo}")
   .side-image-content
-    %h1 #{@user.bio}
     %p #{@user.street1}
     %p #{@user.street2}
     %p #{@user.city}, #{@user.state} #{@user.zip}
     %p Contact: #{@user.name}
     %p Email: #{@user.email}
+    %p #{@user.bio}
     - if current_user == @user
       %a{:href => edit_user_path(current_user)}
         .user-show-link

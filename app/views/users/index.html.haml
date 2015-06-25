@@ -1,14 +1,18 @@
 - if !logged_in?
-  .index-header.mission
-    %i.fa.fa-building
-    %p.mission-title Non-Profit?
-    %p.mission-title
-      = link_to 'Sign up', new_user_path
-      to make your needs visible to the community.
-    %p.mission-sub-title Once signed up, you can post and manage your needs
-
-    %a{:href => '#who-gives'}
-      %i.fa.fa-angle-down
+  .intro
+    .index-header.non-profit-intro
+      %i.fa.fa-building
+      %p.mission-title Non-Profit?
+      %p.mission-title
+        = link_to 'Sign up', new_user_path
+        to make your needs visible to the community.
+      %p.mission-sub-title Once signed up, you can post and manage your needs
+    .index-header.user-intro
+      %p.fa.fa-users
+      %p.mission-title Community Member?
+      %p.mission-title No need to sign up, just follow the steps below.
+      %a{:href => '#who-gives'}
+        %i.fa.fa-angle-down
 
   %hr#who-gives
 

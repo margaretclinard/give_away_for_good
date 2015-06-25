@@ -4,6 +4,23 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.intro {
+  @include outer-container();
+  margin-top: 180px;
+  margin-bottom: 180px;
+  a {
+    color: #281D3D;
+  }
+}
+
+.non-profit-intro {
+  @include span-columns(6);
+}
+
+.user-intro {
+  @include span-columns(6);
+}
+
 .categories {
   li {
     display: inline-block;

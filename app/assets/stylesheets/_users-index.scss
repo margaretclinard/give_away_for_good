@@ -4,15 +4,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.arrow-up {
-  font-size: 3em;
-  color: #281d3d;
-  text-align: center;
-  a {
-    color: #281d3d;
-  }
-}
-
 .categories {
   li {
     display: inline-block;
@@ -35,9 +26,14 @@
   }
 }
 
+#categories {
+  margin-top: 100px;
+  margin-bottom: 145px;
+}
+
 .category {
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
   width: 115px;
   height: 115px;
@@ -56,9 +52,19 @@
 .examples {
   li {
     width: 200px;
-    height: 200px;
-    margin: 20px;
+    height: 140px;
+    margin: 15px;
+    padding-top: 10px;
     display: inline-block;
+  }
+}
+
+.arrow-up {
+  font-size: 3em;
+  color: #281d3d;
+  text-align: center;
+  a {
+    color: #281d3d;
   }
 }
 /******* PARALLAX ********/

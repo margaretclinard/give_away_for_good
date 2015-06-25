@@ -56,6 +56,7 @@
 }
 
 .nav-give-by {
+  margin-top: 20px;
   li {
     font-family: 'Montserrat', sans-serif;
     margin: 15px;
@@ -74,7 +75,7 @@
 }
 
 .menu-bar-bottom {
-  height: 75px;
+  height: 60px;
   background-color: #281D3D;
   text-align: center;
   li {
@@ -115,6 +116,10 @@
   font-size: .5em;
 }
 
+#non-profits {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 /****** FOOTER ******/
 .footer-2 {
   $base-spacing: 1.5em !default;

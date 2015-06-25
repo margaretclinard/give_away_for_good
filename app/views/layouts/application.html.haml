@@ -7,7 +7,7 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body#container
-    %header
+    %header#top
       .navigation
         .title
           %p=link_to "GIVE AWAY for GOOD", root_path
@@ -30,12 +30,12 @@
             %a{:href => '#categories'}
               %li Needs by Category
         #js-parallax-background.parallax-background
-      .menu-bar-bottom#top
+      .menu-bar-bottom
         - if !logged_in?
           .what-is-this
-            %a.arrow{:href => '#top'}
+            %a.arrow{:href => '#arrow'}
               %p Learn More
-              %i.fa.fa-angle-down
+              %i.fa.fa-angle-down#arrow
         - if logged_in?
           %ul
             %a{:href => user_path(current_user)}

@@ -1,45 +1,68 @@
-.index-header#who-gives.mission
-  %p.mission-title Who Gives?
+- if !logged_in?
+  .index-header#who-gives.mission
+    %p.mission-title Who Gives?
 
-  %p.mission-title GIVE AWAY for GOOD was created to inspire Nashville dwellers to give away unused belongings for the betterment of the community.
+    %p.mission-title GIVE AWAY for GOOD was created to inspire Nashville dwellers to give away unused belongings for the betterment of the community.
 
-  .examples
-    %ul
-      %li
-        %i.fa.fa-female
-        %p.mission-sub-title Have a pile of clothes you never wear and would otherwise trash?
-      %li
-        %i.fa.fa-bed
-        %p.mission-sub-title Redesigning your interior and purging old furniture?
-      %li
-        %i.fa.fa-book
-        %p.mission-sub-title Old text books stacking up in the corner of your room?
-
-  %a{:href => '#why-give'}
-    %i.fa.fa-angle-down
-
-%hr#why-give
-
-.index-header.mission
-  %p.mission-title Why give?
-  %p.mission-title Being an engaged community member means giving back to those in need.
-  %p.mission-sub-title Browse Needs by Non-Profit or by Category to Get Started
-
-  .categories
-    %ul
-      %a{:href => '#non-profits'}
+    .examples
+      %ul
         %li
-          %i.fa.fa-building
-          %p Needs by Non-Profit
-      %a{:href => '#categories'}
+          %i.fa.fa-female
+          %p.mission-sub-title Have a pile of clothes you never wear and would otherwise trash?
         %li
-          %i.fa.fa-tasks
-          %p Needs by Category
+          %i.fa.fa-bed
+          %p.mission-sub-title Redesigning your interior and purging old furniture?
+        %li
+          %i.fa.fa-book
+          %p.mission-sub-title Old text books stacking up in the corner of your room?
+
+    %p.mission-title You can give.
+
+    %a{:href => '#why-give'}
+      %i.fa.fa-angle-down
+
+  %hr#why-give
+
+  .index-header.mission
+    %p.mission-title Why give?
+    %p.mission-title Being an engaged community member means giving back to those in need.
+    %p.mission-sub-title Browse Needs by Non-Profit or by Category to Get Started
+
+    .categories
+      %ul
+        %a{:href => '#non-profits'}
+          %li
+            %i.fa.fa-building
+            %p Needs by Non-Profit
+        %a{:href => '#categories'}
+          %li
+            %i.fa.fa-tasks
+            %p Needs by Category
+%hr
+
+.index-header#non-profits
+  %p.mission-title Non-Profits
+  %p.mission-sub-title Select a non-profit to view its profile and current needs
+
+- @users.each do |user|
+  .hover-tile-outer{ :style => "background-image: url(#{user.logo})" }
+    .hover-tile-container
+      .hover-tile.hover-tile-visible
+      .hover-tile.hover-tile-hidden
+        = link_to "#{user.company}", user_path(user)
+        %p Member Since:
+        %p #{user.created_at.month}-#{user.created_at.day}-#{user.created_at.year}
+
+.arrow-up
+  %a{:href => "#top"}
+    %i.fa.fa-angle-up
 
 .grey
   %hr
   .index-header.categories#categories
     %p.mission-title Community Needs
+    %p.mission-sub-title Select a category to view its listings
+
     %ul
       %a{:href => "#books" }
         %li
@@ -69,19 +92,11 @@
         %li
           %i.fa.fa-plus
           %p Other
+    .arrow-up
+      %a{:href => "#top"}
+        %i.fa.fa-angle-up
 
   %hr
-.index-header#non-profits
-  %p.mission-title Non-Profits
-
-- @users.each do |user|
-  .hover-tile-outer{ :style => "background-image: url(#{user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{user.company}", user_path(user)
-        %p Member Since:
-        %p #{user.created_at.month}-#{user.created_at.day}-#{user.created_at.year}
 
 .grey
   %hr
@@ -97,8 +112,8 @@
           %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
-    %a{:href => "#top"}
-      %i.fa.fa-angle-double-up
+    %a{:href => "#categories"}
+      %i.fa.fa-angle-up
   %hr
 
 .index-header#canned-goods.category
@@ -113,8 +128,8 @@
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 %br
 .arrow-up
-  %a{:href => "#top"}
-    %i.fa.fa-angle-double-up
+  %a{:href => "#categories"}
+    %i.fa.fa-angle-up
 
 
 .grey
@@ -131,8 +146,8 @@
           %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
-    %a{:href => "#top"}
-      %i.fa.fa-angle-double-up
+    %a{:href => "#categories"}
+      %i.fa.fa-angle-up
   %hr
 
 .index-header#furniture.category
@@ -147,8 +162,8 @@
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 %br
 .arrow-up
-  %a{:href => "#top"}
-    %i.fa.fa-angle-double-up
+  %a{:href => "#categories"}
+    %i.fa.fa-angle-up
 
 .grey
   %hr
@@ -164,8 +179,8 @@
           %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
-    %a{:href => "#top"}
-      %i.fa.fa-angle-double-up
+    %a{:href => "#categories"}
+      %i.fa.fa-angle-up
   %hr
 
 .index-header#technology.category
@@ -180,8 +195,8 @@
         %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 %br
 .arrow-up
-  %a{:href => "#top"}
-    %i.fa.fa-angle-double-up
+  %a{:href => "#categories"}
+    %i.fa.fa-angle-up
 
 .grey
   %hr
@@ -197,5 +212,5 @@
           %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
-    %a{:href => "#top"}
-      %i.fa.fa-angle-double-up
+    %a{:href => "#categories"}
+      %i.fa.fa-angle-up

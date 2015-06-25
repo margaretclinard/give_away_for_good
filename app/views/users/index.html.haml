@@ -1,7 +1,19 @@
 - if !logged_in?
-  .index-header#who-gives.mission
-    %p.mission-title Who Gives?
+  .index-header.mission
+    %i.fa.fa-building
+    %p.mission-title Non-Profit?
+    %p.mission-title
+      = link_to 'Sign up', new_user_path
+      to make your needs visible to the community.
+    %p.mission-sub-title Once signed up, you can post and manage your needs
 
+    %a{:href => '#who-gives'}
+      %i.fa.fa-angle-down
+
+  %hr#who-gives
+
+  .index-header.mission
+    %p.mission-title Who Gives?
     %p.mission-title GIVE AWAY for GOOD was created to inspire Nashville dwellers to give away unused belongings for the betterment of the community.
 
     .examples
@@ -38,7 +50,7 @@
           %li
             %i.fa.fa-tasks
             %p Needs by Category
-%hr
+  %hr
 
 .index-header#non-profits
   %p.mission-title Non-Profits
@@ -103,13 +115,16 @@
   .index-header#books.category
     %i.fa.fa-book
     %p Books
-  - @posts_books.each do |post|
-    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-      .hover-tile-container
-        .hover-tile.hover-tile-visible
-        .hover-tile.hover-tile-hidden
-          = link_to "#{post.user.company}", user_posts_path(post.user, post)
-          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  - if @posts_books.empty?
+    %p.mission-sub-title There aren't any needs in this category yet.
+  -else
+    - @posts_books.each do |post|
+      .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+        .hover-tile-container
+          .hover-tile.hover-tile-visible
+          .hover-tile.hover-tile-hidden
+            = link_to "#{post.user.company}", user_posts_path(post.user, post)
+            %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
     %a{:href => "#categories"}
@@ -119,13 +134,16 @@
 .index-header#canned-goods.category
   %i.fa.fa-shopping-cart
   %p Canned Goods
-- @posts_canned_goods.each do |post|
-  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{post.user.company}", user_posts_path(post.user, post)
-        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+- if @posts_canned_goods.empty?
+  %p.mission-sub-title There aren't any needs in this category yet.
+- else
+  - @posts_canned_goods.each do |post|
+    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+      .hover-tile-container
+        .hover-tile.hover-tile-visible
+        .hover-tile.hover-tile-hidden
+          = link_to "#{post.user.company}", user_posts_path(post.user, post)
+          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 %br
 .arrow-up
   %a{:href => "#categories"}
@@ -137,13 +155,16 @@
   .index-header#clothes.category
     %i.fa.fa-female
     %p Clothes
-  - @posts_clothes.each do |post|
-    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-      .hover-tile-container
-        .hover-tile.hover-tile-visible
-        .hover-tile.hover-tile-hidden
-          = link_to "#{post.user.company}", user_posts_path(post.user, post)
-          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  - if @posts_clothes.empty?
+    %p.mission-sub-title There aren't any needs in this category yet.
+  - else
+    - @posts_clothes.each do |post|
+      .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+        .hover-tile-container
+          .hover-tile.hover-tile-visible
+          .hover-tile.hover-tile-hidden
+            = link_to "#{post.user.company}", user_posts_path(post.user, post)
+            %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
     %a{:href => "#categories"}
@@ -153,13 +174,16 @@
 .index-header#furniture.category
   %i.fa.fa-bed
   %p Furniture
-- @posts_furniture.each do |post|
-  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{post.user.company}", user_posts_path(post.user, post)
-        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+- if @posts_furniture.empty?
+  %p.mission-sub-title There aren't any needs in this category yet.
+- else
+  - @posts_furniture.each do |post|
+    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+      .hover-tile-container
+        .hover-tile.hover-tile-visible
+        .hover-tile.hover-tile-hidden
+          = link_to "#{post.user.company}", user_posts_path(post.user, post)
+          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 %br
 .arrow-up
   %a{:href => "#categories"}
@@ -170,13 +194,16 @@
   .index-header#school-supplies.category
     %i.fa.fa-pencil
     %p School Supplies
-  - @posts_school.each do |post|
-    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-      .hover-tile-container
-        .hover-tile.hover-tile-visible
-        .hover-tile.hover-tile-hidden
-          = link_to "#{post.user.company}", user_posts_path(post.user, post)
-          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  - if @posts_school.empty?
+    %p.mission-sub-title There aren't any needs in this category yet.
+  - else
+    - @posts_school.each do |post|
+      .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+        .hover-tile-container
+          .hover-tile.hover-tile-visible
+          .hover-tile.hover-tile-hidden
+            = link_to "#{post.user.company}", user_posts_path(post.user, post)
+            %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
     %a{:href => "#categories"}
@@ -186,13 +213,16 @@
 .index-header#technology.category
   %i.fa.fa-laptop
   %p Technology
-- @posts_technology.each do |post|
-  .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-    .hover-tile-container
-      .hover-tile.hover-tile-visible
-      .hover-tile.hover-tile-hidden
-        = link_to "#{post.user.company}", user_posts_path(post.user, post)
-        %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+- if @posts_technology.empty?
+  %p.mission-sub-title There aren't any needs in this category yet.
+- else
+  - @posts_technology.each do |post|
+    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+      .hover-tile-container
+        .hover-tile.hover-tile-visible
+        .hover-tile.hover-tile-hidden
+          = link_to "#{post.user.company}", user_posts_path(post.user, post)
+          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
 %br
 .arrow-up
   %a{:href => "#categories"}
@@ -203,13 +233,16 @@
   .index-header#other.category
     %i.fa.fa-plus
     %p Other
-  - @posts_other.each do |post|
-    .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
-      .hover-tile-container
-        .hover-tile.hover-tile-visible
-        .hover-tile.hover-tile-hidden
-          = link_to "#{post.user.company}", user_posts_path(post.user, post)
-          %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
+  - if @posts_other.empty?
+    %p.mission-sub-title There aren't any needs in this category yet.
+  - else
+    - @posts_other.each do |post|
+      .hover-tile-outer{ :style => "background-image: url(#{post.user.logo})" }
+        .hover-tile-container
+          .hover-tile.hover-tile-visible
+          .hover-tile.hover-tile-hidden
+            = link_to "#{post.user.company}", user_posts_path(post.user, post)
+            %p Posted: #{post.created_at.month}-#{post.created_at.day}-#{post.created_at.year}
   %br
   .arrow-up
     %a{:href => "#categories"}

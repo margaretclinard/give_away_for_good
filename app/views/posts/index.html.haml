@@ -1,5 +1,5 @@
-.index-header
-  %p #{@user.company}'s Listings
+.index-header.mission-title
+  %p #{@user.company}'s Needs
 .posts-show
   - if @posts.empty?
     %p
@@ -13,6 +13,6 @@
             %p Deadline:
             %p #{post.deadline.month}-#{post.deadline.day}-#{post.deadline.year}
 
-%ul#posts-show-nav
+%ul.posts-show-nav
   %li= link_to "Home", root_path
-  %li= link_to "Learn more about #{@user.company}", user_path(@user)
+  %li= link_to "#{@user.company}'s Profile", user_path(@user)

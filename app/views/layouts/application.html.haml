@@ -34,8 +34,8 @@
         - if !logged_in?
           .what-is-this
             %a.arrow{:href => '#arrow'}
-              %p Learn More
-              %i.fa.fa-angle-down#arrow
+              %p#arrow Learn More
+              %i.fa.fa-angle-down
         - if logged_in?
           %ul
             %a{:href => user_path(current_user)}

@@ -1,7 +1,7 @@
 .profile-title
   %h4 #{@user.company}
   %a{:href => user_posts_path(@user)}
-    %p
+    %p.user-show-link
       %i.fa.fa-eye
       View Needs
 
@@ -17,5 +17,6 @@
     %p Email: #{@user.email}
     - if current_user == @user
       %a{:href => edit_user_path(current_user)}
-        %i.fa.fa-pencil
-        Edit
+        .user-show-link
+          %i.fa.fa-pencil
+          Edit

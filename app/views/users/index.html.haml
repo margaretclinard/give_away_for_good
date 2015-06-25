@@ -36,8 +36,6 @@
           %i.fa.fa-tasks
           %p Needs by Category
 
-%hr
-
 .grey
   %hr
   .index-header.categories#categories
@@ -74,7 +72,7 @@
 
   %hr
 .index-header#non-profits
-  %p Non-Profits Involved
+  %p.mission-title Non-Profits
 
 - @users.each do |user|
   .hover-tile-outer{ :style => "background-image: url(#{user.logo})" }

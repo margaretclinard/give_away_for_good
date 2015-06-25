@@ -23,11 +23,19 @@
       #js-parallax-window.parallax-window
         .parallax-static-content
           %p Connecting Nashville with Local Non-Profit Needs
+          %p.mission-sub-title BROWSE:
+          %ul.nav-give-by
+            %a{:href => '#non-profits'}
+              %li Needs by Non-Profit
+            %a{:href => '#categories'}
+              %li Needs by Category
         #js-parallax-background.parallax-background
       .menu-bar-bottom#top
         - if !logged_in?
-          %a.arrow{:href => '#top'}
-            %i.fa.fa-angle-down
+          .what-is-this
+            %a.arrow{:href => '#top'}
+              %p Learn More
+              %i.fa.fa-angle-down
         - if logged_in?
           %ul
             %a{:href => user_path(current_user)}

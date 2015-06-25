@@ -62,7 +62,7 @@
   }
 }
 /******* PARALLAX ********/
-$parallax-window-height: 34em;
+$parallax-window-height: 32em;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
@@ -78,7 +78,7 @@ $parallax-background-height: $parallax-window-height * 2;
   margin-top: 5px;
   font-size: 2em;
   color: #281D3D;
-  padding: 0 0 34em 0;
+  padding: 13px 0 32em 0;
   position: relative;
   z-index: 9;
 }

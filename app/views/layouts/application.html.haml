@@ -20,6 +20,8 @@
           - else
             %li= link_to "Sign Out", user_session_path, method: :delete
           %li Non-Profits:
+        %p.notice= notice
+        %p.alert= alert
       #js-parallax-window.parallax-window
         .parallax-static-content
           %p Connecting Nashville with Local Non-Profit Needs
@@ -50,9 +52,6 @@
               %li
                 %i.fa.fa-eye
                 My Needs
-
-    %p.notice= notice
-    %p.alert= alert
     = yield
 
     %footer.footer-2{:role => "contentinfo"}

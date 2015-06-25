@@ -1,5 +1,10 @@
 # Give Away for Good
-NSS Final Capstone
+### NSS Back-End Capstone Project (June 2015)
+### Technologies used: Ruby on Rails, HAML, Sass, Bourbon/Neat/Bitters/Refills
+
+Created 1 month into learning Ruby on Rails at Nashville Software School, Give Away for Good is a web application built to connect community members with local non-profit needs. Non-profits can sign up to post listings for their material needs, and users can browse by non-profit or by category to donate unused possessions that they would otherwise throw away.
+
+Live app: https://give-away-for-good.herokuapp.com/
 
 ## Project Setup
 
